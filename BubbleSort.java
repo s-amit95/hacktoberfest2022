@@ -1,39 +1,23 @@
-// Bubble sort in Java
+public class bubbleSort {
 
-import java.util.Arrays;
+    public static void main(String args[]){
 
-class Main {
+        int arr[]= {7,2,1,23,18,9}; // example of an unsorted array
 
-  // perform the bubble sort
-  static void bubbleSort(int array[]) {
-    int size = array.length;
+        //bubble sort code
+
+        for(int i=0; i<arr.length-1; i++)
+		{
+			for(int j=0; j<arr.length-i-1;j++)
+			{
+				if(arr[j]>arr[j+1])
+				{
+					int temp=arr[j];
+					arr[j]=arr[j+1];
+					arr[j+1]=temp;
+				}
+			}
+		}
+    }
     
-    // loop to access each array element
-    for (int i = 0; i < size - 1; i++)
-    
-      // loop to compare array elements
-      for (int j = 0; j < size - i - 1; j++)
-
-        // compare two adjacent elements
-        // change > to < to sort in descending order
-        if (array[j] > array[j + 1]) {
-
-          // swapping occurs if elements
-          // are not in the intended order
-          int temp = array[j];
-          array[j] = array[j + 1];
-          array[j + 1] = temp;
-        }
-  }
-
-  public static void main(String args[]) {
-      
-    int[] data = { -2, 45, 0, 11, -9 };
-    
-    // call method using class name
-    Main.bubbleSort(data);
-    
-    System.out.println("Sorted Array in Ascending Order:");
-    System.out.println(Arrays.toString(data));
-  }
 }
