@@ -1,11 +1,11 @@
-public class Arrays
+public class Array
 {
     protected int size;
     protected int max;
     protected int min;
     protected int[] array;
     
-    public Arrays(int size, int max, int min)
+    public Array(int size, int max, int min)
     {
         this.size = size;
         this.max = max;
