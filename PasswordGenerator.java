@@ -21,8 +21,7 @@ public class PasswordGenerator {
         int length = Integer.parseInt(scanner.nextLine());
         System.out.println("Your password is: " + generatePassword(length, caps.equals("y"), numbers.equals("y"), special.equals("y")));
     }
-
-    //generatePassword method with length as argument and boolean values for caps, numbers and special characters
+    
     public static String generatePassword(int length, boolean hasCaps, boolean hasNum, boolean hasSplChars) {
         if (length < 1) {
             System.out.println("Length cannot be less than 1");
