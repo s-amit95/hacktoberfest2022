@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+  
+    <style>
+       
+       
+        .container{
+            background-color: rgb(81, 192, 236);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: auto;
+            border-radius: 15px;
+            padding: 20px;
+            max-width: 500px;
+            margin-top: 150px; 
+            flex-wrap: nowrap;
+            box-shadow: 0 -15px 15px rgba(255, 255, 255,0.05),
+                inset 0 -15px 15px rgba(255, 255, 255,0.05),
+                0 15px 15px rgba(0, 0, 0,0.3),
+                inset 0 15px 15px rgba(0, 0, 0,0.3);
+                background: #091921;
+        }
+       
+        #time,#date{
+            font-size: 40px;
+            font-weight: 700;
+            color: cornsilk;
+        }
+        h1{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 
+            'Lucida Grande', 'Lucida Sans Unicode', Geneva, 
+            Verdana, sans-serif;
+            word-spacing: 1px;
+            color: rgb(69, 252, 206);
+        }
+    </style>
+  
+</head>
+<body>
+    <div class="container">
+     <h1>Current Date and Time is: </h1>
+     <span id="date"></span><br>
+     <span id="time"></span>
+    </div>
+
+    <script>
+        const options={weekday:'long',year:'numeric',month:'long',day:'numeric'}
+        setInterval(()=>{
+        let currDate=new Date();
+         let time=currDate.toTimeString();
+         let date=currDate.toLocaleDateString(undefined,options);
+         let hours=currDate.getHours();
+         let min=currDate.getMinutes();
+         let sec=currDate.getSeconds();
+           
+         if(hours<10){hours='0'+hours}
+         if(min<10){min='0'+min};
+         if(sec<10){sec='0'+sec};
+         let tym=hours+' : '+min+' : '+sec;
+         
+         document.getElementById('date').innerHTML=date;
+        document.getElementById('time').innerHTML=tym;
+        
+        
+    },1000)
+
+    </script>
+  
+</body>
+</html>
